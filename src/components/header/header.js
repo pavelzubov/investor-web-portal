@@ -77,7 +77,7 @@ const Header = ({
         <div className="header__auth">
           <ul className="navbar-nav flex-row">
             <li className="nav-item text-nowrap">
-              <AuthControls />
+              <AuthControls id="auth" />
             </li>
           </ul>
         </div>

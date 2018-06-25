@@ -31,3 +31,6 @@ yarn-error.log*
 
 # styles
 src/**/*.css
+
+#screenshots
+integrated-tests/screenshot
