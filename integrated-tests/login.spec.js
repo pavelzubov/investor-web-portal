@@ -44,9 +44,6 @@ describe("auth tests", () => {
       await page.type("input[type=password]", "qwerty");
       await page.click("#loginSubmit");
       await page.waitFor(2000);
-      await page.screenshot({
-        path: "./integrated-tests/screenshot/logined.png"
-      });
       const html = await page.$eval("#auth", e => e.innerHTML);
       expect(html).toBe("Sign Out");
     },
@@ -79,9 +76,6 @@ describe("auth tests", () => {
       await page.type("input[type=password]", "qwerty");
       await page.click("#loginSubmit");
       await page.waitFor(2000);
-      await page.screenshot({
-        path: "./integrated-tests/screenshot/error.png"
-      });
       const html = await page.$eval(".text-danger strong", e => e.innerHTML);
       expect(html).toBe("Wrong email/password");
     },
