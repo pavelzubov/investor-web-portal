@@ -1,5 +1,8 @@
 var puppeteer = require("puppeteer");
 
+const indexOfUrl = process.argv.indexOf("testUrl") + 1;
+const url = process.argv[indexOfUrl];
+
 const isDebugging = () => {
   const debugging_mode = {
     headless: false,
@@ -31,7 +34,7 @@ describe("auth tests", () => {
     async () => {
       let page = await browser.newPage();
       await page.setViewport(screenSize);
-      await page.goto("http://localhost:3000/");
+      await page.goto(url);
       await page.waitForSelector("#auth");
       await page.click("#auth");
       await page.waitForSelector("#loginForm");
@@ -53,7 +56,7 @@ describe("auth tests", () => {
   it("correct log out", async () => {
     let page = await browser.newPage();
     await page.setViewport(screenSize);
-    await page.goto("http://localhost:3000/");
+    await page.goto(url);
     await page.waitForSelector("#auth");
     await page.click("#auth");
     await page.waitFor(2000);
@@ -66,7 +69,7 @@ describe("auth tests", () => {
     async () => {
       let page = await browser.newPage();
       await page.setViewport(screenSize);
-      await page.goto("http://localhost:3000/");
+      await page.goto(url);
       await page.waitForSelector("#auth");
       await page.click("#auth");
       await page.waitForSelector("#loginForm");
