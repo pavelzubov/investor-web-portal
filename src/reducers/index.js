@@ -1,4 +1,5 @@
 import headerReducer from "modules/header/reducer/header-reducer";
+import investPopupReducer from "modules/invest-popup/reducer/invest-popup.reducer";
 import notificationsReducer from "pages/app/components/notifications/reducers/notifications.reducers";
 import { loadingBarReducer } from "react-redux-loading-bar";
 import { routerReducer } from "react-router-redux";
@@ -47,5 +48,6 @@ export default combineReducers({
   notifications: notificationsReducer,
   manager: managerReducer,
   wallet: walletReducer,
-  accountSettings: accountSettingsReducer
+  accountSettings: accountSettingsReducer,
+  investPopup: investPopupReducer
 });

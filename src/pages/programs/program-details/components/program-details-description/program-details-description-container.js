@@ -25,7 +25,7 @@ class ProgramDetailsDescriptionContainer extends Component {
   };
 
   render() {
-    const { programDetails, goBack, programAuthorUrl } = this.props;
+    const { programDetails, goBack, programAuthorUrl, programId } = this.props;
     const { toggleReinvesting } = this;
 
     if (!programDetails) return null;
@@ -34,6 +34,7 @@ class ProgramDetailsDescriptionContainer extends Component {
       <Fragment>
         <ProgramDetailsNavigation goBack={goBack} />
         <ProgramDetailsDescription
+          programId={programId.programId}
           programDetails={programDetails}
           programAuthorUrl={programAuthorUrl}
           programInvestUrl={""}
